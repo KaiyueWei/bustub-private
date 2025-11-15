@@ -27,7 +27,9 @@ namespace bustub {
 template <typename KeyType>
 CountMinSketch<KeyType>::CountMinSketch(uint32_t width, uint32_t depth) : width_(width), depth_(depth) {
   /** @TODO(student) Implement this function! */
-
+  if(width == 0 or depth == 0){
+	throw std::invalid_argument;
+  }
   /** @fall2025 PLEASE DO NOT MODIFY THE FOLLOWING */
   // Initialize seeded hash functions
   hash_functions_.reserve(depth_);
